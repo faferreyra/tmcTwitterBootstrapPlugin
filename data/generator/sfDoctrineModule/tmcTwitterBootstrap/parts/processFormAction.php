@@ -33,7 +33,7 @@
       {
         $this->getUser()->setFlash('success', $notice);
 
-        $this->redirect(array('sf_route' => '<?php echo $this->getUrlForAction('show') ?>', 'sf_subject' => $<?php echo $this->getSingularName() ?>));
+        $this->redirect(array('sf_route' => '<?php echo $this->getUrlForAction('edit') ?>', 'sf_subject' => $<?php echo $this->getSingularName() ?>));
       }
     }
     else
