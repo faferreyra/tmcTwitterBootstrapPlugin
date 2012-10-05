@@ -32,7 +32,8 @@
 
                 <div>
                     [?php include_partial('<?php echo $this->getModuleName() ?>/list_batch_actions', array('helper' => $helper)) ?]
-                    <div class="well pull-left">[?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]</div>
+                
+                      [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
                 </div>
                 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
                     </form>
