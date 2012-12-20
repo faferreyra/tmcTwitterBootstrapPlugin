@@ -40,6 +40,11 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
       return link_to('<i class="icon-arrow-down icon-black"></i> '.__($params['label'], array(), 'tmcTwitterBootstrapPlugin'), $this->getUrlForAction('demote'), $object, array('class' => 'btn btn-small'));
    }
 
+    public function linkToImport($params)
+   {
+      return link_to('<i class="icon-upload icon-white"></i> '.__($params['label'], array(), 'tmcTwitterBootstrapPlugin'), '@'.$this->getUrlForAction('import'), array('class' => 'btn btn-success btn-small'));
+   }
+
 
    public function linkToShow($object, $params)
    {
