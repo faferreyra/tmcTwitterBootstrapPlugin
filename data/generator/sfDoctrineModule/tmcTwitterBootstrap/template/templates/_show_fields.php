@@ -1,9 +1,10 @@
 <?php foreach ($this->configuration->getValue('show.display') as $title => $fields): ?>
-    <table class="table table-bordered table-striped table-show" id="show_<?php echo $this->getModuleName() ?>">
-    <?php if('NONE' !== $title): ?>
-        <caption>[?php echo __('<?php echo $title ?>') ?]</caption>
+   <?php if('NONE' !== $title): ?>
+    <h2>[?php echo __('<?php echo $title ?>') ?]</h2>
     <?php endif ?>
-    <tbody>
+
+<table class="table table-bordered table-striped table-show" id="show_<?php echo $this->getModuleName() ?>">
+        <tbody>
         <?php foreach ($fields as $name => $field): ?>
             <?php if ($field->isPartial()): ?>
                 [?php include_partial('<?php echo $this->getModuleName() ?>/<?php echo $name ?>', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)) ?]
