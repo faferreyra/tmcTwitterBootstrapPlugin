@@ -2,7 +2,7 @@
 [?php use_javascripts_for_form($form) ?]
 
 <div class="sf_admin_form well">
-   [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('class' => 'form-horizontal form-inline')) ?]
+   [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('id' => ($form->getName() . '_' . ($form->isNew() ? 'new' : 'edit')), 'class' => 'form-horizontal form-inline')) ?]
    [?php echo $form->renderHiddenFields(false) ?]
 
    [?php if ($form->hasGlobalErrors()): ?]
