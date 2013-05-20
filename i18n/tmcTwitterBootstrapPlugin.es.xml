@@ -159,7 +159,7 @@
       </trans-unit>
       <trans-unit id="39">
         <source>Go</source>
-        <target>Aplicar</target>
+        <target>Ok</target>
       </trans-unit>
       <trans-unit id="40">
         <source>Sidebar text</source>
@@ -427,7 +427,7 @@
       </trans-unit>
       <trans-unit id="106">
         <source>Save and add</source>
-        <target>Guardar y crear</target>
+        <target>Guardar y crear otro</target>
       </trans-unit>
       <trans-unit id="107">
         <source>Cancel</source>

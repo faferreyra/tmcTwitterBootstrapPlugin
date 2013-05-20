@@ -8,9 +8,28 @@
             [?php include_partial('<?php echo $this->getModuleName() ?>/show_sidebar', array('configuration' => $configuration, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)) ?]
         [?php endif; ?]
 
-        <div class="span[?php echo $sidebar_status ? '10' : '12'; ?]">
+        <div class="well span[?php echo $sidebar_status ? '10' : '12'; ?]">
+
+           <div class="btn-group pull-right">
+                <?php foreach ($this->configuration->getValue('show.actions') as $name => $params): ?>
+                    <?php if ('_delete' == $name): ?>
+                        <?php echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>
+                    <?php elseif ('_edit' == $name): ?>
+                        <?php echo $this->addCredentialCondition('[?php echo $helper->linkToEdit($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>
+                    <?php elseif ('_show' == $name): ?>
+                        <?php echo $this->addCredentialCondition('[?php echo $helper->linkToShow($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>
+                    <?php elseif ('_list' == $name): ?>
+                        <?php echo $this->addCredentialCondition('[?php echo $helper->linkToList('.$this->asPhp($params).') ?]', $params) ?>
+                    <?php else: ?>
+                        <?php echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params) ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+
 
             <h1>[?php echo <?php echo $this->getI18NString('show.title') ?> ?]</h1>
+
+            <div class="page-header"></div>
 
             [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
 

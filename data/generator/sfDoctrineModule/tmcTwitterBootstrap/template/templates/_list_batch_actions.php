@@ -1,5 +1,5 @@
 <?php if ($listActions = $this->configuration->getValue('list.batch_actions')): ?>
-<div class="well pull-left margin-right">
+<div class="pull-left margin-right">
     <select name="batch_action" class="input-medium">
         <option value="">[?php echo __('Choose an action', array(), 'tmcTwitterBootstrapPlugin') ?]</option>
         <?php foreach ((array) $listActions as $action => $params): ?>

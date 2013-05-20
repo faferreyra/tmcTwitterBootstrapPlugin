@@ -12,14 +12,14 @@
             [?php include_partial('<?php echo $this->getModuleName() ?>/list_sidebar', array('configuration' => $configuration)) ?]
         [?php endif; ?]
 
-        <div class="span[?php echo $sidebar_status ? '10' : '12'; ?]">
+        <div class="well span[?php echo $sidebar_status ? '10' : '12'; ?]">
             <div class="pull-right">[?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]</div>
 
-            <h1 style="display: inline">[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h1>
+            <h1>[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h1>
 
             [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
 
-            <div id="sf_admin_header">
+            <div id="sf_admin_header" class="page-header">
                 [?php include_partial('<?php echo $this->getModuleName() ?>/list_header', array('pager' => $pager)) ?]
             </div>
 
@@ -31,8 +31,6 @@
                 [?php include_partial('<?php echo $this->getModuleName() ?>/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?]
 
                 <div>
-                    [?php include_partial('<?php echo $this->getModuleName() ?>/list_batch_actions', array('helper' => $helper)) ?]
-                
                       [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
                 </div>
                 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
@@ -40,7 +38,7 @@
                 <?php endif; ?>
 
                 <form class="form-inline" method="get" action="[?php echo url_for('<?php echo $this->getUrlForAction('list') ?>') ?]">
-                    <div class="well pull-right">
+                   <div class="pull-right">
                         [?php $select = new sfWidgetFormChoice(array(
                                         'multiple' => false,
                                         'expanded' => false,

@@ -1,7 +1,7 @@
 [?php use_stylesheets_for_form($form) ?]
 [?php use_javascripts_for_form($form) ?]
 
-<div class="sf_admin_form well">
+<div class="sf_admin_form">
    [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('id' => ($form->getName() . '_' . ($form->isNew() ? 'new' : 'edit')), 'class' => 'form-horizontal form-inline')) ?]
    [?php echo $form->renderHiddenFields(false) ?]
 
