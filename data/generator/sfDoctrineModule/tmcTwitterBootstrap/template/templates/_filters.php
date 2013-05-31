@@ -28,8 +28,7 @@
                 [?php endforeach; ?]
 
                 <div class="modal-footer">
-                    [?php echo link_to(__('Reset filter', null, 'tmcTwitterBootstrapPlugin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' => 'btn btn-warning btn-inline')) ?]
-                    <input class="btn" type="submit" value="[?php echo __('Filter', array(), 'tmcTwitterBootstrapPlugin') ?]" />
+                    <input class="btn btn-success" type="submit" value="[?php echo __('Filter', array(), 'tmcTwitterBootstrapPlugin') ?]" />
                 </div>
             </form>
         </div>

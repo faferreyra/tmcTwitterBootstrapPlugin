@@ -59,7 +59,7 @@
       </trans-unit>
       <trans-unit id="14">
         <source>Reset filter</source>
-        <target>Reestablecer filtro</target>
+        <target>Eliminar filtro</target>
       </trans-unit>
       <trans-unit id="15">
         <source>Choose an action</source>
