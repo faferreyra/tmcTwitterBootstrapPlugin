@@ -1,6 +1,5 @@
 [?php use_helper('I18N', 'Date') ?]
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
-[?php include_partial('<?php echo $this->getModuleName() ?>/header') ?]
 
 <div class="container-fluid">
     <div class="row-fluid">
@@ -8,7 +7,7 @@
             [?php include_partial('<?php echo $this->getModuleName() ?>/show_sidebar', array('configuration' => $configuration, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)) ?]
         [?php endif; ?]
 
-        <div class="well span[?php echo $sidebar_status ? '10' : '12'; ?]">
+        <div class="span[?php echo $sidebar_status ? '10' : '12'; ?]">
 
            <div class="btn-group pull-right">
                 <?php foreach ($this->configuration->getValue('show.actions') as $name => $params): ?>
@@ -27,7 +26,7 @@
             </div>
 
 
-            <h1>[?php echo <?php echo $this->getI18NString('show.title') ?> ?]</h1>
+            <h2>[?php echo <?php echo $this->getI18NString('show.title') ?> ?]</h2>
 
             <div class="page-header"></div>
 
@@ -57,5 +56,3 @@
         </div>
     </div>
 </div>
-<br />
-[?php include_partial('<?php echo $this->getModuleName() ?>/footer') ?]

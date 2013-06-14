@@ -9,6 +9,11 @@
    [?php echo $form->renderGlobalErrors() ?]
    [?php endif; ?]
 
+   <div class="actions control-group">
+      [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
+   </div>
+
+
    [?php $form_fields = $configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit'); ?]
 
    [?php if(count($form_fields) > 1): ?]
@@ -46,7 +51,7 @@
 
    [?php endif; ?]
 
-   <div class="actions">
+   <div class="actions control-group">
       [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
    </div>
 </form>

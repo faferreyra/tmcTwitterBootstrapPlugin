@@ -1,6 +1,5 @@
 [?php use_helper('I18N', 'Date') ?]
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
-[?php include_partial('<?php echo $this->getModuleName() ?>/header') ?]
 
 <?php if ($this->configuration->hasFilterForm()): ?>
 [?php include_partial('<?php echo $this->getModuleName() ?>/filters', array('form' => $filters, 'configuration' => $configuration)) ?]
@@ -12,10 +11,10 @@
             [?php include_partial('<?php echo $this->getModuleName() ?>/list_sidebar', array('configuration' => $configuration)) ?]
         [?php endif; ?]
 
-        <div class="well span[?php echo $sidebar_status ? '10' : '12'; ?]">
+        <div class="span[?php echo $sidebar_status ? '10' : '12'; ?]">
             <div class="pull-right">[?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]</div>
 
-            <h1>[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h1>
+            <h2>[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h2>
 
             [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
 
@@ -56,4 +55,3 @@
     </div>
 </div>
 
-[?php include_partial('<?php echo $this->getModuleName() ?>/footer') ?]

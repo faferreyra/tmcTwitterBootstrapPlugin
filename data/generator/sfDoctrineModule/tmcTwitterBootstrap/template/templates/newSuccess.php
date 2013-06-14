@@ -1,6 +1,5 @@
 [?php use_helper('I18N', 'Date') ?]
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
-[?php include_partial('<?php echo $this->getModuleName() ?>/header') ?]
 
 <div class="container-fluid">
     <div class="row-fluid">
@@ -8,14 +7,9 @@
             [?php include_partial('<?php echo $this->getModuleName() ?>/new_sidebar', array('configuration' => $configuration)) ?]
         [?php endif; ?]
 
-        <div class="well span[?php echo $sidebar_status ? '10' : '12'; ?]">
+        <div class="span[?php echo $sidebar_status ? '10' : '12'; ?]">
 
-            <div class="actions pull-right">
-            [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
-         </div>
-
-
-            <h1>[?php echo <?php echo $this->getI18NString('new.title') ?> ?]</h1>
+            <h2>[?php echo <?php echo $this->getI18NString('new.title') ?> ?]</h2>
 
             [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
 
@@ -34,4 +28,3 @@
     </div>
 </div>
 
-[?php include_partial('<?php echo $this->getModuleName() ?>/footer') ?]

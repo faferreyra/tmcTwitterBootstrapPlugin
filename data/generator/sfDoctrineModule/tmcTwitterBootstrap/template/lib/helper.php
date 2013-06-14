@@ -22,12 +22,23 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
          return '';
       }
 
-      return link_to('<i class="icon-trash icon-white"></i> '.__($params['label'], array(), 'tmcTwitterBootstrapPlugin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'class' => 'btn btn-small btn-danger', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'tmcTwitterBootstrapPlugin') : $params['confirm']));
+      return link_to('<i class="icon-trash icon-white"></i>', $this->getUrlForAction('delete'), $object, array(
+         'method' => 'delete', 
+         'class' => 
+         'btn btn-small btn-danger', 
+         'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'tmcTwitterBootstrapPlugin') : $params['confirm'],
+         'rel' => 'tooltip',
+         'title' => __($params['label'], array(), 'tmcTwitterBootstrapPlugin')
+      ));
    }
 
    public function linkToEdit($object, $params)
    {
-      return link_to('<i class="icon-pencil icon-black"></i> '.__($params['label'], array(), 'tmcTwitterBootstrapPlugin'), $this->getUrlForAction('edit'), $object, array('class' => 'btn btn-small'));
+      return link_to('<i class="icon-pencil icon-black"></i>', $this->getUrlForAction('edit'), $object, array(
+         'class' => 'btn btn-small',
+         'rel' => 'tooltip',
+         'title' => __($params['label'], array(), 'tmcTwitterBootstrapPlugin')
+      ));
    }
 
    public function linkToPromote($object, $params)
@@ -48,12 +59,16 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
 
    public function linkToShow($object, $params)
    {
-      return link_to('<i class="icon-list icon-black"></i> '.__($params['label'], array(), 'tmcTwitterBootstrapPlugin'), $this->getUrlForAction('show'), $object, array('class' => 'btn btn-small'));
+      return link_to('<i class="icon-search icon-black"></i>', $this->getUrlForAction('show'), $object, array(
+         'class' => 'btn btn-small',
+         'rel' => 'tooltip',
+         'title' => __($params['label'], array(), 'tmcTwitterBootstrapPlugin')
+      ));
    }
 
    public function linkToSave($object, $params)
    {
-      return '<input class="btn btn-small btn-primary" type="submit" value="'.__($params['label'], array(), 'tmcTwitterBootstrapPlugin').'" />';
+      return '<button class="btn btn-small btn-success" type="submit"><i class="icon-ok"></i> ' . __($params['label'], array(), 'tmcTwitterBootstrapPlugin') . '</button>';
    }
    public function linkToNew($params)
    {
@@ -71,7 +86,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
          return '';
       }
 
-      return '<input class="btn btn-small btn-success" type="submit" value="'.__($params['label'], array(), 'tmcTwitterBootstrapPlugin').'" name="_save_and_add" />';
+      return '<button class="btn btn-small btn-success" name="_save_and_add" type="submit"><i class="icon-plus"></i> ' . __($params['label'], array(), 'tmcTwitterBootstrapPlugin') . '</button>';
    }
    public function linkToList($params)
    {
