@@ -1,0 +1,14 @@
+{
+	"name" : "symfony/tmc-twitter-bootstrap-plugin",
+	"type" : "symfony1-plugin",
+	"description" : "This is a twitter bootstrap theme for the symfony 1.4 admin generator",
+	"keywords" : ["symfony", "admin", "generator],
+	"require" : {
+		"composer/installers" : "*"
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "1.0.0"
+		}
+	}
+}
